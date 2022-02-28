@@ -1,0 +1,25 @@
+<h1>Sign up</h1>
+
+<!-- BU form yapısında user modelini kullanmak istediğimizi söylüyoruz yani bu form user modelinin nesneleriyle doldurulacak anlamına gelir. -->
+<%= form_with model: @user, url: sign_up_path do |form| %>  
+
+<!-- E-posta, parola ve parola onayı gibi Form metin alanlarını bu şekilde yazdırırız. -->
+    <div class="mb-3">
+        <%= form.label :email %>
+        <%= form.text_field :email ,class:"form-control", placeholder:"example@gmail.com"%>
+    </div>
+
+    <div class="mb-3">  
+        <%= form.label :password %>
+        <%= form.password_field :password , class:"form-control", placeholder:"password"%>
+    </div>
+
+    <div class="mb-3">
+        <%= form.label :password_confirmation%>
+        <%= form.password_field :password_confirmation , class:"form-control", placeholder:"password" %>
+    </div>
+
+    <div class="mb-3">
+    <%= form.submit "Sign up" , class:"btn btn-primary mb-3"%>
+    </div>
+<% end %>
